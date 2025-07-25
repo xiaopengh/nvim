@@ -17,8 +17,30 @@ Make sure you have the following installed on **Ubuntu**:
 
 ### 1. **Neovim**
 
+Neovim **version 0.10.0 or higher** is required for compatibility with `nvim-lspconfig`. Older versions will raise errors due to missing APIs like `vim.uv`.
+
+Download the latest release from the official repository:
+[https://github.com/neovim/neovim/releases](https://github.com/neovim/neovim/releases)
+
+To install from AppImage:
+
 ```bash
-sudo apt install neovim
+mkdir -p ~/.local/bin
+wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -O ~/.local/bin/nvim
+chmod u+x ~/.local/bin/nvim
+```
+
+Ensure `~/.local/bin` is in your PATH:
+
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Then verify:
+
+```bash
+nvim --version
 ```
 
 ### 2. **LaTeX toolchain (for VimTeX)**
@@ -49,16 +71,18 @@ sudo apt install nodejs npm
 
 You can use `cargo` or download the binary manually:
 
+#### Recommended for Ubuntu:
+
+Download the `texlab-x86_64-linux.tar.gz` release from the [texlab GitHub releases](https://github.com/latex-lsp/texlab/releases) page:
+
 ```bash
-# If you have Rust installed
-cargo install texlab
+wget https://github.com/latex-lsp/texlab/releases/latest/download/texlab-x86_64-linux.tar.gz
 ```
 
-Or download from: [https://github.com/latex-lsp/texlab/releases](https://github.com/latex-lsp/texlab/releases)
-
-Ensure `texlab` is in your PATH:
+Extract and move to a location in your PATH:
 
 ```bash
+tar -xzf texlab-x86_64-linux.tar.gz
 sudo mv texlab /usr/local/bin/
 ```
 
@@ -139,3 +163,4 @@ You can include a screenshot showing VimTeX and Zathura side-by-side.
 ## License
 
 MIT
+
