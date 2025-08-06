@@ -1,9 +1,9 @@
--- ~/.config/nvim/lua/config/autopairs.lua
+-- ~/.config/nvim/lua/plugins/autopairs.lua
 
+local cmp = require('cmp')
 local npairs = require('nvim-autopairs')
 local Rule = require('nvim-autopairs.rule')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-local cmp = require('cmp')
 
 -- Setup autopairs
 npairs.setup({})
