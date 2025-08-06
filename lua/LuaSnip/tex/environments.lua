@@ -11,6 +11,18 @@ local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
 return {
+
+	-- general environment
+	s({trig="env", snippetType="autosnippet", dscr="Expand 'env' into a general environment"},
+		fmta(
+			[[
+				\begin{<>}
+					<>
+				\end{<>}
+			]],
+			{ i(1), i(2), rep(1) }-- this node repeats insert node i(1)}
+		)
+	),
 	
 	-- \frac
 	s({trig="ff", dscr="Expands 'tt' into \texttt{}"},
