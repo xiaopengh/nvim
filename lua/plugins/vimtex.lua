@@ -4,7 +4,8 @@
 -- VimTeX configuration
 ---------------------------------------------------
 vim.g.vimtex_compiler_method = 'latexmk'
-vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_view_method = 'general'
+vim.g.vimtex_view_general_viewer = 'evince'
 vim.g.vimtex_syntax_enabled = 1
 vim.g.vimtex_syntax_conceal_disable = 1
 vim.g.tex_flavor = 'latex'
