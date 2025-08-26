@@ -13,6 +13,14 @@ vim.opt.shiftwidth = 4        -- Number of spaces to use for each step of (auto)
 vim.opt.softtabstop = 4       -- Number of spaces a <Tab> feels like during editing
 vim.opt.expandtab = false      -- Convert tabs to spaces
 
+-- Toggle background between light and dark
+vim.keymap.set("n", "<F5>", function()
+  if vim.o.background == "dark" then
+    vim.o.background = "light"
+  else
+    vim.o.background = "dark"
+  end
+end, { desc = "Toggle light/dark background" })
 
 -- Set local leader
 vim.g.mapleader = "\\"
